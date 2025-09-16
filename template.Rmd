@@ -59,3 +59,34 @@ pups_df =
 
 CSVs are great but sometimes you get excel.
 
+```{r}
+library(readxl)
+mlb_df = 
+  read_excel("data/mlb11.xlsx")
+view(mlb_df)
+```
+
+Import LotR word counts.
+```{r}
+fotr_df = 
+  read_excel("data/LotR_Words.xlsx", range = "B3:D6")
+```
+
+## SAS??
+```{r}
+library(haven)
+pulse_df =  read_sas("data/public_pulse_data.sas7bdat")
+
+pulse_df = 
+  janitor::clean_names(pulse_df)
+```
+
+Why do we use read_csv versus read.csv?
+Doesn't show as much useful info
+
+```{r eval = FALSE}
+litters_df_base = read.csv("data/FAS_litters.csv")
+```
+
+
+
