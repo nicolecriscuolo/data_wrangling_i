@@ -189,3 +189,9 @@ Why do we use read_csv versus read.csv? Doesn’t show as much useful info
 ``` r
 litters_df_base = read.csv("data/FAS_litters.csv")
 ```
+
+Data exporting..
+
+``` r
+write_csv(fotr_df, "data/fotr_df.csv")
+```
