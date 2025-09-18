@@ -28,3 +28,50 @@ pups_df =
   janitor::clean_names(pups_df)
 ```
 
+## `select` selects variables
+
+select columns you want to keep
+```{r}
+select(litters_df, group, litter_number, gd0_weight)
+```
+
+specify range of columns you want to keep
+```{r}
+select(litters_df, group:gd_of_birth)
+```
+
+specify columns you want to remove
+```{r}
+select(litters_df, -pups_survive)
+```
+
+select by prefix
+```{r}
+select(litters_df, group, starts_with("gd"))
+```
+
+rearrange by selecting
+```{r}
+select(litters_df, starts_with("gd"), group)
+select(litters_df, litter_number, everything())
+
+relocate(litters_df, litter_number)
+```
+
+rename by selecting
+```{r}
+select(litters_df, GROUP = group, everything())
+rename(litters_df, GROUP = group)
+```
+
+what if i only select one variable?
+```{r}
+select(litters_df, group)
+pull(litters_df, group)
+```
+
+in the pups data, select the columns containing litter number, sex, and PD ears
+```{r}
+select(pups_df, litter_number, sex, pd_ears)
+```
+
